@@ -59,10 +59,6 @@
     .btn-nav { font-family: 'Coolvetica Condensed', sans-serif; font-size: 15px; letter-spacing: .08em; text-transform: uppercase; padding: 10px 22px; background: var(--green); color: var(--black); border: none; border-radius: 6px; cursor: pointer; transition: opacity .2s; white-space: nowrap; }
     .btn-nav:hover { opacity: .88; }
 
-    /* ── NAV TAGLINE ─────────────────────────────────────── */
-    .nav-tagline { background: var(--b2); border-bottom: 1px solid var(--border-d); text-align: center; padding: 7px 28px; font-size: 11px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.45); }
-    .nav-tagline span { color: var(--green); }
-
     /* ── HERO ────────────────────────────────────────────── */
     .hero { position: relative; overflow: hidden; min-height: 86vh; display: flex; align-items: center; background: var(--black); }
     .hero-vid { position: absolute; inset: 0; z-index: 0; }
@@ -275,11 +271,6 @@
   </div>
 </nav>
 
-<!-- ═══════════ TAGLINE ═══════════ -->
-<div class="nav-tagline">
-  <span>Arizona's tuition-free virtual charter school</span> · Grades 4–8 · Laptop provided · Public charter
-</div>
-
 <!-- ═══════════ HERO ═══════════ -->
 <section class="hero">
   <div class="hero-vid">
@@ -295,8 +286,7 @@
       <h1 class="disp d1 green-t">All June. Free.</h1>
 
       <p class="hero-sub">
-        Three live, hands-on workshops — a taste of what <strong>Unbound afternoons look like every day</strong>.
-        One hour. Your child builds something real. No application, no commitment.
+        Three live, hands-on workshops — a taste of what <strong>Unbound afternoons look like every day</strong>. Unbound is Arizona's tuition-free virtual charter school for grades 4–8. One hour. Your child builds something real.
       </p>
 
       <button class="btn-primary" onclick="document.getElementById('sessions').scrollIntoView({behavior:'smooth'})">
@@ -308,7 +298,6 @@
         <div class="hpill"><span>✓</span>Completely Free</div>
         <div class="hpill"><span>✓</span>All Virtual · Zoom</div>
         <div class="hpill"><span>✓</span>Grades 4–8</div>
-        <div class="hpill"><span>✓</span>No Commitment</div>
       </div>
     </div>
   </div>
@@ -387,7 +376,7 @@
     <div class="form-wrap">
       <div class="lbl-light">Sign Up</div>
       <h2 class="disp d3">Save your spot.</h2>
-      <p class="form-sub">Free. No commitment. You'll get a Zoom link before each session.</p>
+      <p class="form-sub">Free. You'll get a Zoom link before each session.</p>
 
       <div class="ss-box">
         <div class="ss-box-title">Your selected sessions</div>
@@ -475,7 +464,7 @@
         </div>
         <p class="consent">By submitting, you agree to receive texts and calls from Unbound Academy about programs and enrollment. Reply STOP to opt out. <a href="https://unbound.school/privacy-policy">Privacy Policy</a>.</p>
         <button type="submit" class="btn-submit">Save My Spot →</button>
-        <p class="form-trust">🔒 No commitment · No application required · Unsubscribe anytime</p>
+        <p class="form-trust">🔒 No application required · Unsubscribe anytime</p>
       </form>
     </div>
   </div>
@@ -500,6 +489,35 @@
     </div>
   </div>
 </div>
+
+
+<!-- ═══════════ OUTCOMES ═══════════ -->
+<section class="outcomes-sec">
+  <div class="c">
+    <div class="outcomes-intro">
+      <div class="lbl-dark">What Your Child Gets</div>
+      <h2 class="disp d3" style="color:#fff">More than a fun hour.</h2>
+      <p>Three things every student walks away with after one session.</p>
+    </div>
+    <div class="outcomes-grid">
+      <div class="ocard">
+        <span class="ocard-icon">🤝</span>
+        <h3>Real connections</h3>
+        <p>Meet other kids who actually get what their life is like — virtual schoolers, homeschoolers, and students who've never quite fit the traditional mold. The community is the thing.</p>
+      </div>
+      <div class="ocard">
+        <span class="ocard-icon">🏆</span>
+        <h3>Something they built</h3>
+        <p>Your child leaves with a finished product they're proud of — a 10-page AI storybook, a playable Scratch game, or new friendships from across the country. Not a participation ribbon.</p>
+      </div>
+      <div class="ocard">
+        <span class="ocard-icon">💡</span>
+        <h3>A new sense of what's possible</h3>
+        <p>One hour is enough to change how a kid thinks about learning. No grades, no pressure — just proof they can create something from scratch with the right environment around them.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ═══════════ ABOUT UNBOUND ═══════════ -->
 <section class="about-sec" id="about">
@@ -581,35 +599,6 @@
         </div>
       </div>
 
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════ OUTCOMES ═══════════ -->
-<section class="outcomes-sec">
-  <div class="c">
-    <div class="outcomes-intro">
-      <div class="lbl-dark">What Your Child Gets</div>
-      <h2 class="disp d3" style="color:#fff">More than a fun hour.</h2>
-      <p>Three things every student walks away with after one session.</p>
-    </div>
-    <div class="outcomes-grid">
-      <div class="ocard">
-        <span class="ocard-icon">🤝</span>
-        <h3>Real connections</h3>
-        <p>Meet other kids who actually get what their life is like — virtual schoolers, homeschoolers, and students who've never quite fit the traditional mold. The community is the thing.</p>
-      </div>
-      <div class="ocard">
-        <span class="ocard-icon">🏆</span>
-        <h3>Something they built</h3>
-        <p>Your child leaves with a finished product they're proud of — a 10-page AI storybook, a playable Scratch game, or new friendships from across the country. Not a participation ribbon.</p>
-      </div>
-      <div class="ocard">
-        <span class="ocard-icon">💡</span>
-        <h3>A new sense of what's possible</h3>
-        <p>One hour is enough to change how a kid thinks about learning. No grades, no pressure — just proof they can create something from scratch with the right environment around them.</p>
-      </div>
     </div>
   </div>
 </section>
