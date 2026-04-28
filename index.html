@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unbound Summer Sessions — Free Live Workshops This June | Grades 4–8</title>
+  <meta name="description" content="Try Unbound free this June. Live, interactive sessions on Zoom — build an AI storybook, code a real game, or meet other virtual schoolers. One hour. No application, no commitment." />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TXR4Q7DK');</script>
+
+  <!-- HubSpot tracking -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49211848.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── TOKENS ─────────────────────────────────────────── */
+    :root {
+      --black:    #080808;
+      --b2:       #111111;
+      --b3:       #1a1a1a;
+      --green:    #ceff65;
+      --white:    #ffffff;
+      --off:      #fafaf7;
+      --off2:     #f2f2ee;
+      --ink:      #080808;
+      --ink2:     #3a3a3a;
+      --ink3:     #666666;
+      --border-l: #e0e0d8;
+      --border-d: #222222;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--off); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .c { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+
+    /* ── TYPE ───────────────────────────────────────────── */
+    .disp { font-family: 'Bebas Neue', sans-serif; font-weight: 400; letter-spacing: .03em; text-transform: uppercase; line-height: 1.0; }
+    .d1 { font-size: clamp(52px, 7.5vw, 96px); }
+    .d2 { font-size: clamp(36px, 5vw, 64px); }
+    .d3 { font-size: clamp(28px, 3.5vw, 46px); }
+    .green-t { color: var(--green); }
+    .lbl-dark { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
+    .lbl-light { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: #999; margin-bottom: 12px; }
+
+    /* ── NAV ─────────────────────────────────────────────── */
+    nav { position: sticky; top: 0; z-index: 200; background: var(--black); border-bottom: 1px solid var(--border-d); }
+    .nav-in { max-width: 1160px; margin: 0 auto; padding: 15px 28px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .nav-logo img { height: 26px; width: auto; filter: brightness(0) invert(1); }
+    .nav-logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: .05em; color: #fff; display: none; }
+    .nav-logo-text span { color: var(--green); }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #777; transition: color .2s; }
+    .nav-links a:hover { color: #fff; }
+    .btn-nav { font-family: 'Bebas Neue', sans-serif; font-size: 15px; letter-spacing: .08em; text-transform: uppercase; padding: 10px 22px; background: var(--green); color: var(--black); border: none; border-radius: 6px; cursor: pointer; transition: opacity .2s; white-space: nowrap; }
+    .btn-nav:hover { opacity: .88; }
+
+    /* ── HERO ────────────────────────────────────────────── */
+    .hero { position: relative; overflow: hidden; min-height: 86vh; display: flex; align-items: center; background: var(--black); }
+    .hero-vid { position: absolute; inset: 0; z-index: 0; }
+    .hero-vid video { width: 100%; height: 100%; object-fit: cover; opacity: .16; }
+    .hero-vid::after { content: ''; position: absolute; inset: 0; background: linear-gradient(160deg, rgba(8,8,8,.1) 0%, rgba(8,8,8,.65) 55%, rgba(8,8,8,1) 100%); }
+    .hero-body { position: relative; z-index: 2; width: 100%; padding: 80px 0 72px; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--green); margin-bottom: 22px; }
+    .hero-eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--green); }
+    .hero h1 { color: #fff; margin-bottom: 2px; }
+    .hero-sub { font-size: 18px; line-height: 1.72; color: #aaa; max-width: 540px; margin: 22px 0 36px; }
+    .hero-sub strong { color: #fff; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 10px; font-family: 'Bebas Neue', sans-serif; font-size: 17px; letter-spacing: .1em; text-transform: uppercase; padding: 15px 38px; background: var(--green); color: var(--black); border: none; border-radius: 6px; cursor: pointer; transition: opacity .2s; }
+    .btn-primary:hover { opacity: .88; }
+    .btn-primary svg { width: 15px; height: 15px; }
+    .hero-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .hpill { font-size: 12px; font-weight: 600; padding: 6px 13px; border-radius: 4px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); color: #aaa; }
+    .hpill span { color: var(--green); margin-right: 4px; }
+
+    /* ── SESSIONS ────────────────────────────────────────── */
+    .sessions-sec { background: var(--off); padding: 80px 0; border-bottom: 1px solid var(--border-l); }
+    .sessions-intro { text-align: center; max-width: 640px; margin: 0 auto 48px; }
+    .sessions-intro h2 { color: var(--ink); margin-bottom: 12px; }
+    .sessions-intro p { font-size: 16px; color: var(--ink3); line-height: 1.72; }
+    .homeschool-note { display: inline-flex; align-items: center; gap: 8px; background: rgba(206,255,101,.1); border: 1.5px solid rgba(206,255,101,.4); border-radius: 8px; padding: 9px 16px; font-size: 13px; font-weight: 700; color: var(--ink2); margin-top: 18px; }
+    .sessions-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+
+    /* Session card */
+    .session-card { background: #fff; border: 1.5px solid var(--border-l); border-radius: 12px; padding: 28px; transition: border-color .2s, box-shadow .2s; }
+    .session-card:hover { border-color: #bbb; box-shadow: 0 4px 24px rgba(0,0,0,.07); }
+    .session-card.has-date { border-color: var(--green); box-shadow: 0 4px 24px rgba(206,255,101,.12); }
+    .sc-icon { font-size: 36px; display: block; margin-bottom: 12px; }
+    .sc-type { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 3px 10px; border-radius: 4px; margin-bottom: 10px; }
+    .sc-type.workshop { background: #EDE9FE; color: #5B21B6; }
+    .sc-type.social { background: #D1FAE5; color: #065F46; }
+    .session-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: .03em; color: var(--ink); margin-bottom: 4px; }
+    .sc-time { font-size: 12px; font-weight: 700; color: var(--ink3); margin-bottom: 10px; letter-spacing: .02em; }
+    .session-card p { font-size: 14px; color: var(--ink3); line-height: 1.65; margin-bottom: 18px; }
+    .sc-date-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: #999; margin-bottom: 8px; }
+    .sc-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .sc-pill { padding: 5px 11px; border-radius: 4px; border: 1.5px solid var(--border-l); font-size: 12px; font-weight: 700; color: var(--ink3); background: var(--off); cursor: pointer; transition: all .15s; white-space: nowrap; }
+    .sc-pill:hover { border-color: var(--green); color: var(--ink); background: rgba(206,255,101,.08); }
+    .sc-pill.selected { background: var(--green); border-color: var(--green); color: var(--black); }
+    .sc-confirm { font-size: 12px; font-weight: 600; color: #059669; margin-top: 10px; min-height: 18px; }
+
+    /* ── FORM ────────────────────────────────────────────── */
+    .form-sec { background: var(--white); padding: 80px 0; border-bottom: 1px solid var(--border-l); }
+    .form-wrap { max-width: 700px; margin: 0 auto; }
+    .form-wrap .lbl-light { text-align: center; }
+    .form-wrap h2 { text-align: center; color: var(--ink); margin-bottom: 8px; }
+    .form-sub { text-align: center; font-size: 16px; color: var(--ink3); margin-bottom: 32px; }
+
+    /* Session summary box */
+    .ss-box { background: var(--off); border: 1.5px solid var(--border-l); border-radius: 10px; padding: 16px 20px; margin-bottom: 28px; }
+    .ss-box-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: #999; margin-bottom: 10px; }
+    .ss-empty { font-size: 13px; color: #aaa; }
+    .ss-item { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--ink2); margin-bottom: 4px; }
+    .ss-item::before { content: '✓'; color: #059669; font-weight: 800; font-size: 11px; }
+    .ss-nudge { font-size: 12px; color: #666; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border-l); }
+
+    /* Form fields */
+    .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .fg { margin-bottom: 14px; }
+    .fg label { display: block; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #999; margin-bottom: 5px; }
+    .fg input, .fg select { width: 100%; padding: 12px 14px; background: var(--off); border: 1px solid var(--border-l); border-radius: 6px; color: var(--ink); font-size: 14px; font-family: 'Inter', sans-serif; outline: none; transition: border-color .2s, box-shadow .2s; -webkit-appearance: none; appearance: none; }
+    .fg input::placeholder { color: #bbb; }
+    .fg input:focus, .fg select:focus { border-color: var(--ink); box-shadow: 0 0 0 3px rgba(8,8,8,.06); }
+    .consent { font-size: 11px; color: #aaa; line-height: 1.55; margin: 8px 0 16px; }
+    .consent a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+    .btn-submit { width: 100%; padding: 16px; font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: .1em; text-transform: uppercase; background: var(--black); color: var(--green); border: none; border-radius: 6px; cursor: pointer; transition: opacity .2s; }
+    .btn-submit:hover { opacity: .85; }
+    .form-trust { text-align: center; font-size: 11px; color: #bbb; margin-top: 10px; }
+
+    /* ── PHOTO COLLAGE ───────────────────────────────────── */
+    .photo-sec { background: var(--off2); padding: 72px 0; overflow: visible; }
+    .photo-collage { display: grid; grid-template-columns: 1.15fr 0.85fr 1fr 0.9fr; gap: 16px; align-items: center; }
+    .photo-item { border-radius: 14px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,.10); }
+    .photo-item:nth-child(1) { transform: rotate(-1.5deg); aspect-ratio: 4/5; }
+    .photo-item:nth-child(2) { transform: rotate(1deg); aspect-ratio: 3/4; margin-top: 32px; }
+    .photo-item:nth-child(3) { transform: rotate(-0.8deg); aspect-ratio: 4/5; }
+    .photo-item:nth-child(4) { transform: rotate(1.5deg); aspect-ratio: 3/4; margin-top: -24px; }
+    .photo-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* ── OUTCOMES ────────────────────────────────────────── */
+    .outcomes-sec { background: var(--black); padding: 80px 0; }
+    .outcomes-intro { text-align: center; max-width: 560px; margin: 0 auto 48px; }
+    .outcomes-intro h2 { color: #fff; margin-bottom: 12px; }
+    .outcomes-intro p { font-size: 16px; color: #888; line-height: 1.72; }
+    .outcomes-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .ocard { background: var(--b3); border: 1px solid var(--border-d); border-radius: 12px; padding: 32px 28px; transition: border-color .25s; }
+    .ocard:hover { border-color: rgba(206,255,101,.3); }
+    .ocard-icon { font-size: 36px; margin-bottom: 16px; display: block; }
+    .ocard h3 { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: .03em; color: #fff; margin-bottom: 10px; }
+    .ocard p { font-size: 14px; color: #888; line-height: 1.7; }
+
+    /* ── TESTIMONIALS ────────────────────────────────────── */
+    .testy-sec { background: var(--b2); padding: 80px 0; border-top: 1px solid var(--border-d); }
+    .testy-header { margin-bottom: 40px; }
+    .testy-header h2 { color: #fff; margin-bottom: 8px; }
+    .testy-header p { font-size: 15px; color: #888; }
+    .testy-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .testy-card { background: var(--b3); border: 1px solid var(--border-d); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; transition: border-color .25s; }
+    .testy-card:hover { border-color: rgba(206,255,101,.3); }
+    .testy-photo { width: 100%; height: 190px; overflow: hidden; background: #1a1a1a; }
+    .testy-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .5s; }
+    .testy-card:hover .testy-photo img { transform: scale(1.05); }
+    .testy-body { padding: 24px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
+    .testy-ql { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: .02em; color: #fff; line-height: 1.2; }
+    .testy-p { font-size: 13px; color: #aaa; line-height: 1.65; flex: 1; }
+    .testy-by { font-size: 12px; font-weight: 700; color: var(--green); text-transform: uppercase; letter-spacing: .07em; }
+
+    /* ── FAQ ─────────────────────────────────────────────── */
+    .faq-sec { background: var(--white); padding: 80px 0; border-top: 1px solid var(--border-l); }
+    .faq-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 64px; align-items: flex-start; }
+    .faq-intro h2 { color: var(--ink); margin-bottom: 14px; }
+    .faq-intro p { font-size: 15px; color: var(--ink3); line-height: 1.7; }
+    .faq-intro a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-bottom: 1px solid var(--border-l); }
+    .faq-q { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 0; cursor: pointer; user-select: none; font-size: 15px; font-weight: 600; color: var(--ink2); transition: color .2s; }
+    .faq-q:hover { color: var(--ink); }
+    .faq-arr { font-size: 22px; color: var(--ink); flex-shrink: 0; transition: transform .25s; opacity: .3; }
+    .faq-item.open .faq-arr { transform: rotate(45deg); opacity: 1; }
+    .faq-item.open .faq-q { color: var(--ink); }
+    .faq-a { display: none; padding: 0 0 18px; font-size: 14px; color: var(--ink3); line-height: 1.7; }
+    .faq-item.open .faq-a { display: block; }
+
+    /* ── FINAL CTA ───────────────────────────────────────── */
+    .cta-sec { background: var(--green); padding: 80px 0; text-align: center; }
+    .cta-sec .lbl-cta { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: rgba(8,8,8,.4); margin-bottom: 12px; }
+    .cta-sec h2 { color: var(--black); margin-bottom: 14px; }
+    .cta-sec p { font-size: 17px; color: rgba(8,8,8,.6); margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .btn-dark { display: inline-block; padding: 15px 44px; font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: .1em; text-transform: uppercase; background: var(--black); color: var(--green); border: none; border-radius: 6px; cursor: pointer; transition: opacity .2s; }
+    .btn-dark:hover { opacity: .88; }
+    .cta-note { font-size: 13px; color: rgba(8,8,8,.4); margin-top: 12px; }
+
+    /* ── FOOTER ──────────────────────────────────────────── */
+    footer { background: var(--b2); padding: 48px 0 24px; border-top: 1px solid var(--border-d); }
+    .foot-inner { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 32px; margin-bottom: 32px; }
+    .foot-brand { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: .05em; color: #fff; margin-bottom: 8px; }
+    .foot-brand span { color: var(--green); }
+    .foot-tag { font-size: 13px; color: #888; max-width: 220px; line-height: 1.6; }
+    .foot-links { display: flex; flex-direction: column; gap: 8px; }
+    .foot-links a { font-size: 13px; color: #888; transition: color .2s; }
+    .foot-links a:hover { color: #fff; }
+    .foot-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding-top: 20px; border-top: 1px solid var(--border-d); }
+    .foot-copy { font-size: 12px; color: #2a2a2a; }
+    .foot-legal { display: flex; gap: 16px; }
+    .foot-legal a { font-size: 12px; color: #333; transition: color .2s; }
+    .foot-legal a:hover { color: #fff; }
+
+    /* ── MOBILE ──────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .sessions-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+      .faq-layout { grid-template-columns: 1fr; }
+      .testy-grid { grid-template-columns: 1fr; max-width: 480px; }
+      .outcomes-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+    }
+    @media (max-width: 760px) {
+      .photo-collage { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .photo-item:nth-child(3), .photo-item:nth-child(4) { display: none; }
+      .photo-item { margin-top: 0 !important; }
+      .frow { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 640px) {
+      .hero { min-height: 92vh; }
+    }
+  </style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXR4Q7DK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav>
+  <div class="nav-in">
+    <a href="https://unbound.school" class="nav-logo">
+      <img src="https://cdn.prod.website-files.com/67f3ddeb99a658ee1f0fdecd/68ae3f6dc323d625e489e8de_Group%2052.png"
+           alt="Unbound Academy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+      <span class="nav-logo-text" style="display:none">Unbound<span>.</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#sessions">Sessions</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <button class="btn-nav" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})">Sign Up Free →</button>
+  </div>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero">
+  <div class="hero-vid">
+    <video autoplay muted loop playsinline>
+      <source src="https://join.unbound.school/videos/prequel-transcode.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="c">
+    <div class="hero-body">
+      <div class="hero-eyebrow">Free Virtual Sessions · June 2026</div>
+
+      <h1 class="disp d1">Afternoons like this.</h1>
+      <h1 class="disp d1 green-t">All June. Free.</h1>
+
+      <p class="hero-sub">
+        Three live, hands-on workshops — a taste of what <strong>Unbound afternoons look like every day</strong>.
+        One hour. Your child builds something real. No application, no commitment.
+      </p>
+
+      <button class="btn-primary" onclick="document.getElementById('sessions').scrollIntoView({behavior:'smooth'})">
+        Pick a session
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </button>
+
+      <div class="hero-pills">
+        <div class="hpill"><span>✓</span>Completely Free</div>
+        <div class="hpill"><span>✓</span>All Virtual · Zoom</div>
+        <div class="hpill"><span>✓</span>Grades 4–8</div>
+        <div class="hpill"><span>✓</span>No Commitment</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SESSIONS ═══════════ -->
+<section class="sessions-sec" id="sessions">
+  <div class="c">
+    <div class="sessions-intro">
+      <div class="lbl-light">June 2026 · Virtual · Grades 4–8</div>
+      <h2 class="disp d3">Pick a session. Pick your week.</h2>
+      <p>Each session is one hour. Same content runs every week of June — just pick the date that works. Sign up for one or all three.</p>
+      <div class="homeschool-note">🏠 Homeschool family? These were built for you too.</div>
+    </div>
+    <div class="sessions-grid" id="main-cards">
+
+      <!-- Story -->
+      <div class="session-card" data-session="story">
+        <span class="sc-icon">📖</span>
+        <span class="sc-type workshop">Workshop</span>
+        <h3>Create Your Own Story</h3>
+        <p class="sc-time">Tuesdays · 3:00 PM MST · 1 hour</p>
+        <p>Use AI to bring a story to life — characters, plot, illustrations. Students build a complete 10-page storybook and leave with a finished book to share.</p>
+        <div class="sc-date-label">Pick a date in June:</div>
+        <div class="sc-pills">
+          <button class="sc-pill" data-session="story" data-date="June 2"  data-label="Tue, Jun 2 · 3pm MST"  onclick="pickDate(this)">Tue, Jun 2</button>
+          <button class="sc-pill" data-session="story" data-date="June 9"  data-label="Tue, Jun 9 · 3pm MST"  onclick="pickDate(this)">Tue, Jun 9</button>
+          <button class="sc-pill" data-session="story" data-date="June 16" data-label="Tue, Jun 16 · 3pm MST" onclick="pickDate(this)">Tue, Jun 16</button>
+          <button class="sc-pill" data-session="story" data-date="June 23" data-label="Tue, Jun 23 · 3pm MST" onclick="pickDate(this)">Tue, Jun 23</button>
+          <button class="sc-pill" data-session="story" data-date="June 30" data-label="Tue, Jun 30 · 3pm MST" onclick="pickDate(this)">Tue, Jun 30</button>
+        </div>
+        <div class="sc-confirm" id="sc-confirm-story"></div>
+      </div>
+
+      <!-- Game -->
+      <div class="session-card" data-session="game">
+        <span class="sc-icon">🎮</span>
+        <span class="sc-type workshop">Workshop</span>
+        <h3>Build Your Own Video Game</h3>
+        <p class="sc-time">Thursdays · 9:00 AM MST · 1 hour</p>
+        <p>No experience needed. Learn Scratch and build a real, playable game from scratch. Customize every detail and leave with something you'll want to share.</p>
+        <div class="sc-date-label">Pick a date in June:</div>
+        <div class="sc-pills">
+          <button class="sc-pill" data-session="game" data-date="June 4"  data-label="Thu, Jun 4 · 9am MST"  onclick="pickDate(this)">Thu, Jun 4</button>
+          <button class="sc-pill" data-session="game" data-date="June 11" data-label="Thu, Jun 11 · 9am MST" onclick="pickDate(this)">Thu, Jun 11</button>
+          <button class="sc-pill" data-session="game" data-date="June 18" data-label="Thu, Jun 18 · 9am MST" onclick="pickDate(this)">Thu, Jun 18</button>
+          <button class="sc-pill" data-session="game" data-date="June 25" data-label="Thu, Jun 25 · 9am MST" onclick="pickDate(this)">Thu, Jun 25</button>
+        </div>
+        <div class="sc-confirm" id="sc-confirm-game"></div>
+      </div>
+
+      <!-- Social -->
+      <div class="session-card" data-session="social">
+        <span class="sc-icon">🤝</span>
+        <span class="sc-type social">Social</span>
+        <h3>Meet Other Virtual Schoolers</h3>
+        <p class="sc-time">Wednesdays · 12:00 PM MST · 1 hour</p>
+        <p>Games, team challenges, and a group of virtual and homeschooled students who actually get what it's like to learn outside a traditional classroom. A different theme every week.</p>
+        <div class="sc-date-label">Pick a date in June:</div>
+        <div class="sc-pills">
+          <button class="sc-pill" data-session="social" data-date="June 3"  data-label="Wed, Jun 3 · 12pm MST"  onclick="pickDate(this)">Wed, Jun 3</button>
+          <button class="sc-pill" data-session="social" data-date="June 10" data-label="Wed, Jun 10 · 12pm MST" onclick="pickDate(this)">Wed, Jun 10</button>
+          <button class="sc-pill" data-session="social" data-date="June 17" data-label="Wed, Jun 17 · 12pm MST" onclick="pickDate(this)">Wed, Jun 17</button>
+          <button class="sc-pill" data-session="social" data-date="June 24" data-label="Wed, Jun 24 · 12pm MST" onclick="pickDate(this)">Wed, Jun 24</button>
+        </div>
+        <div class="sc-confirm" id="sc-confirm-social"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FORM ═══════════ -->
+<section class="form-sec" id="signup">
+  <div class="c">
+    <div class="form-wrap">
+      <div class="lbl-light">Sign Up</div>
+      <h2 class="disp d3">Save your spot.</h2>
+      <p class="form-sub">Free. No commitment. You'll get a Zoom link before each session.</p>
+
+      <div class="ss-box">
+        <div class="ss-box-title">Your selected sessions</div>
+        <div id="ss-list"><span class="ss-empty">No sessions selected yet — pick your dates above.</span></div>
+        <div id="ss-nudge" style="display:none" class="ss-nudge">💡 Sign up for all three in the same week to see a full Unbound afternoon.</div>
+      </div>
+
+      <form onsubmit="handleSubmit(event)">
+        <div class="frow">
+          <div class="fg"><label>Guardian First Name *</label><input type="text" name="first_name" required placeholder="Sarah" /></div>
+          <div class="fg"><label>Guardian Last Name *</label><input type="text" name="last_name" required placeholder="Johnson" /></div>
+        </div>
+        <div class="fg"><label>Student's First Name *</label><input type="text" name="child_firstname" required placeholder="Alex" /></div>
+        <div class="fg"><label>Email Address *</label><input type="email" name="email" required placeholder="parent@email.com" /></div>
+        <div class="fg"><label>Phone Number *</label><input type="tel" name="phone" required placeholder="(555) 000-0000" /></div>
+        <div class="frow">
+          <div class="fg">
+            <label>Student's Grade (2026–2027) *</label>
+            <select name="grade" required>
+              <option value="">Select grade…</option>
+              <option value="4th">4th grade</option>
+              <option value="5th">5th grade</option>
+              <option value="6th">6th grade</option>
+              <option value="7th">7th grade</option>
+              <option value="8th">8th grade</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label>State *</label>
+            <select name="state" required>
+              <option value="">Select state…</option>
+              <option value="Arizona">Arizona</option>
+              <option disabled>──────────</option>
+              <option value="Alabama">Alabama</option>
+              <option value="Alaska">Alaska</option>
+              <option value="Arkansas">Arkansas</option>
+              <option value="California">California</option>
+              <option value="Colorado">Colorado</option>
+              <option value="Connecticut">Connecticut</option>
+              <option value="Delaware">Delaware</option>
+              <option value="Florida">Florida</option>
+              <option value="Georgia">Georgia</option>
+              <option value="Hawaii">Hawaii</option>
+              <option value="Idaho">Idaho</option>
+              <option value="Illinois">Illinois</option>
+              <option value="Indiana">Indiana</option>
+              <option value="Iowa">Iowa</option>
+              <option value="Kansas">Kansas</option>
+              <option value="Kentucky">Kentucky</option>
+              <option value="Louisiana">Louisiana</option>
+              <option value="Maine">Maine</option>
+              <option value="Maryland">Maryland</option>
+              <option value="Massachusetts">Massachusetts</option>
+              <option value="Michigan">Michigan</option>
+              <option value="Minnesota">Minnesota</option>
+              <option value="Mississippi">Mississippi</option>
+              <option value="Missouri">Missouri</option>
+              <option value="Montana">Montana</option>
+              <option value="Nebraska">Nebraska</option>
+              <option value="Nevada">Nevada</option>
+              <option value="New Hampshire">New Hampshire</option>
+              <option value="New Jersey">New Jersey</option>
+              <option value="New Mexico">New Mexico</option>
+              <option value="New York">New York</option>
+              <option value="North Carolina">North Carolina</option>
+              <option value="North Dakota">North Dakota</option>
+              <option value="Ohio">Ohio</option>
+              <option value="Oklahoma">Oklahoma</option>
+              <option value="Oregon">Oregon</option>
+              <option value="Pennsylvania">Pennsylvania</option>
+              <option value="Rhode Island">Rhode Island</option>
+              <option value="South Carolina">South Carolina</option>
+              <option value="South Dakota">South Dakota</option>
+              <option value="Tennessee">Tennessee</option>
+              <option value="Texas">Texas</option>
+              <option value="Utah">Utah</option>
+              <option value="Vermont">Vermont</option>
+              <option value="Virginia">Virginia</option>
+              <option value="Washington">Washington</option>
+              <option value="West Virginia">West Virginia</option>
+              <option value="Wisconsin">Wisconsin</option>
+              <option value="Wyoming">Wyoming</option>
+            </select>
+          </div>
+        </div>
+        <p class="consent">By submitting, you agree to receive texts and calls from Unbound Academy about programs and enrollment. Reply STOP to opt out. <a href="https://unbound.school/privacy-policy">Privacy Policy</a>.</p>
+        <button type="submit" class="btn-submit">Save My Spot →</button>
+        <p class="form-trust">🔒 No commitment · No application required · Unsubscribe anytime</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ PHOTOS ═══════════ -->
+<div class="photo-sec">
+  <div class="c">
+    <div class="photo-collage">
+      <div class="photo-item">
+        <img src="./photos/pexels-julia-m-cameron-4145356.jpg" alt="Student in virtual class" loading="lazy" onerror="this.closest('.photo-sec').style.display='none'" />
+      </div>
+      <div class="photo-item">
+        <img src="./photos/pexels-august-de-richelieu-4260475.jpg" alt="Parent and child learning together" loading="lazy" />
+      </div>
+      <div class="photo-item">
+        <img src="./photos/pexels-julia-m-cameron-4143800.jpg" alt="Student engaged in virtual learning" loading="lazy" />
+      </div>
+      <div class="photo-item">
+        <img src="./photos/pexels-karola-g-7269629.jpg" alt="Student at computer" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ OUTCOMES ═══════════ -->
+<section class="outcomes-sec" id="about">
+  <div class="c">
+    <div class="outcomes-intro">
+      <div class="lbl-dark">What Your Child Gets</div>
+      <h2 class="disp d3" style="color:#fff">More than a fun hour.</h2>
+      <p>Three things every student walks away with after one session.</p>
+    </div>
+    <div class="outcomes-grid">
+      <div class="ocard">
+        <span class="ocard-icon">🤝</span>
+        <h3>Real connections</h3>
+        <p>Meet other kids who actually get what their life is like — virtual schoolers, homeschoolers, and students who've never quite fit the traditional mold. The community is the thing.</p>
+      </div>
+      <div class="ocard">
+        <span class="ocard-icon">🏆</span>
+        <h3>Something they built</h3>
+        <p>Your child leaves with a finished product they're proud of — a 10-page AI storybook, a playable Scratch game, or new friendships from across the country. Not a participation ribbon.</p>
+      </div>
+      <div class="ocard">
+        <span class="ocard-icon">💡</span>
+        <h3>A new sense of what's possible</h3>
+        <p>One hour is enough to change how a kid thinks about learning. No grades, no pressure — just proof they can create something from scratch with the right environment around them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ TESTIMONIALS ═══════════ -->
+<section class="testy-sec">
+  <div class="c">
+    <div class="testy-header">
+      <div class="lbl-dark">What Families Say</div>
+      <h2 class="disp d3" style="color:#fff">Real Unbound families.</h2>
+      <p>What it's like when school actually fits your family's life.</p>
+    </div>
+    <div class="testy-grid">
+      <div class="testy-card">
+        <div class="testy-photo" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;">
+          <span style="font-size:48px">✦</span>
+        </div>
+        <div class="testy-body">
+          <div class="testy-ql">"Our son trains five days a week and still thrives academically."</div>
+          <div class="testy-p">At every other school, our son was constantly choosing between learning and doing what he loves. Unbound eliminated that choice entirely. He thrives academically AND athletically now.</div>
+          <div class="testy-by">Rochelle R. · Chandler, AZ</div>
+        </div>
+      </div>
+      <div class="testy-card">
+        <div class="testy-photo" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;">
+          <span style="font-size:48px">✦</span>
+        </div>
+        <div class="testy-body">
+          <div class="testy-ql">"Two hours of focused learning. The rest? Real life."</div>
+          <div class="testy-p">Our boys finish core academics in just two hours a day, then spend the rest on real-world skills. The small class sizes, supportive environment, and emphasis on life readiness made this a clear winner.</div>
+          <div class="testy-by">Breanna L. · Tucson, AZ</div>
+        </div>
+      </div>
+      <div class="testy-card">
+        <div class="testy-photo" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;">
+          <span style="font-size:48px">✦</span>
+        </div>
+        <div class="testy-body">
+          <div class="testy-ql">"The traditional education system is long overdue for a change."</div>
+          <div class="testy-p">As a parent who believes in AI and modern education, Unbound was an easy decision. The business and tech workshops are exactly what kids need for the world they're actually growing up in.</div>
+          <div class="testy-by">Lauren S. · Mesa, AZ</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FAQ ═══════════ -->
+<section class="faq-sec" id="faq">
+  <div class="c">
+    <div class="faq-layout">
+      <div class="faq-intro">
+        <div class="lbl-light">FAQs</div>
+        <h2 class="disp d3">Common Questions.</h2>
+        <p>Can't find what you're looking for? <a href="https://unbound.school/contact">Contact us</a> — we reply same day.</p>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item open">
+          <div class="faq-q" onclick="toggleFaq(this)">Are these sessions really free? <span class="faq-arr">+</span></div>
+          <div class="faq-a">Yes — completely free. No credit card, no application, no fees of any kind. Just sign up and show up. These are open virtual workshops, no strings attached.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Are these live classes or pre-recorded? <span class="faq-arr">+</span></div>
+          <div class="faq-a">Live. Your child joins an interactive Zoom session with a teacher and other students. They participate, ask questions, and build in real time — it's not a video to watch.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">What does my child need to join? <span class="faq-arr">+</span></div>
+          <div class="faq-a">A laptop or desktop computer and a stable internet connection. For the Game session, a free Scratch account helps (your child can set one up in 2 minutes). For the Story session, a Gmail account. The teacher will walk through setup at the start — no prep needed.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Are these for homeschooled students too? <span class="faq-arr">+</span></div>
+          <div class="faq-a">Absolutely. These sessions were built with virtual and homeschool families in mind. Your child will be alongside other students who understand what it's like to learn outside a traditional classroom.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Can my child do all three? <span class="faq-arr">+</span></div>
+          <div class="faq-a">Yes — and we recommend it. Each session is a completely different activity, and the three workshops happen on different days of the week. You can sign up for all three in the same week of June or spread them across the month.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">What grades are these for? <span class="faq-arr">+</span></div>
+          <div class="faq-a">Students in grades 4–8 (for the 2026–2027 school year). The sessions are designed to be accessible and engaging across that full range.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Is this related to Unbound Academy? <span class="faq-arr">+</span></div>
+          <div class="faq-a">Yes — these sessions give you a real taste of what Unbound afternoons look like every day. Unbound is a tuition-free virtual public charter school for Arizona grades 4–8 where students master academics in 2 hours, then spend afternoons in hands-on skill workshops like these. If you're curious about full enrollment, we're happy to chat after your session.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CTA ═══════════ -->
+<section class="cta-sec">
+  <div class="c">
+    <div class="lbl-cta">June 2026</div>
+    <h2 class="disp d2">See What Unbound Is About.</h2>
+    <p>One hour. Free. Your child leaves with something real.</p>
+    <button class="btn-dark" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})">Save My Spot →</button>
+    <p class="cta-note">Virtual · Grades 4–8 · No commitment</p>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="c">
+    <div class="foot-inner">
+      <div>
+        <div class="foot-brand">Unbound<span>.</span></div>
+        <p class="foot-tag">Free virtual workshops this June. A taste of what Unbound afternoons look like every day.</p>
+      </div>
+      <div class="foot-links">
+        <a href="https://unbound.school">Unbound Academy</a>
+        <a href="https://unbound.school/privacy-policy">Privacy Policy</a>
+        <a href="https://unbound.school/contact">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="foot-copy">© 2026 Unbound Academy</span>
+      <div class="foot-legal">
+        <a href="https://unbound.school/privacy-policy">Privacy</a>
+        <a href="https://unbound.school/terms">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ── STATE ── */
+const HS_PORTAL = '49211848';
+const HS_FORM   = '05e0d333-1650-49fc-9d7e-306e608531dc';
+
+const SESSION_DATE_ISO = {
+  story:  { 'June 2':'2026-06-02','June 9':'2026-06-09','June 16':'2026-06-16','June 23':'2026-06-23','June 30':'2026-06-30' },
+  game:   { 'June 4':'2026-06-04','June 11':'2026-06-11','June 18':'2026-06-18','June 25':'2026-06-25' },
+  social: { 'June 3':'2026-06-03','June 10':'2026-06-10','June 17':'2026-06-17','June 24':'2026-06-24' }
+};
+const SESSION_DATE_DISPLAY = {
+  story:  { 'June 2':'Tuesday, June 2 at 3pm MST','June 9':'Tuesday, June 9 at 3pm MST','June 16':'Tuesday, June 16 at 3pm MST','June 23':'Tuesday, June 23 at 3pm MST','June 30':'Tuesday, June 30 at 3pm MST' },
+  game:   { 'June 4':'Thursday, June 4 at 9am MST','June 11':'Thursday, June 11 at 9am MST','June 18':'Thursday, June 18 at 9am MST','June 25':'Thursday, June 25 at 9am MST' },
+  social: { 'June 3':'Wednesday, June 3 at 12pm MST','June 10':'Wednesday, June 10 at 12pm MST','June 17':'Wednesday, June 17 at 12pm MST','June 24':'Wednesday, June 24 at 12pm MST' }
+};
+const SESSION_NAMES = { story:'Create Your Own Story', game:'Build Your Own Video Game', social:'Meet Other Virtual Schoolers' };
+
+let selectedDates = {};
+
+/* ── UTM capture ── */
+(function(){
+  const p = new URLSearchParams(location.search);
+  ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(k => {
+    if (p.get(k)) localStorage.setItem('ub_' + k, p.get(k));
+  });
+})();
+
+/* ── Date picker ── */
+function pickDate(btn) {
+  const sess = btn.dataset.session;
+  const date = btn.dataset.date;
+  // Deselect siblings
+  btn.closest('.sc-pills').querySelectorAll('.sc-pill').forEach(p => p.classList.remove('selected'));
+  btn.classList.add('selected');
+  selectedDates[sess] = { date, label: btn.dataset.label };
+  const card = btn.closest('.session-card');
+  card.classList.add('has-date');
+  const confirm = document.getElementById('sc-confirm-' + sess);
+  if (confirm) { confirm.textContent = '✓ Date selected — register below ↓'; }
+  updateSummary();
+}
+
+function updateSummary() {
+  const list = document.getElementById('ss-list');
+  const nudge = document.getElementById('ss-nudge');
+  const keys = Object.keys(selectedDates);
+  if (!keys.length) {
+    list.innerHTML = '<span class="ss-empty">No sessions selected yet — pick your dates above.</span>';
+    if (nudge) nudge.style.display = 'none';
+    return;
+  }
+  list.innerHTML = keys.map(k => `<div class="ss-item">${SESSION_NAMES[k]} — ${selectedDates[k].label}</div>`).join('');
+  if (nudge) nudge.style.display = keys.length < 3 ? 'block' : 'none';
+}
+
+function getSessionsValue() {
+  return Object.keys(selectedDates).map(k => SESSION_NAMES[k] + ' – ' + selectedDates[k].date).join('; ');
+}
+
+function isoToHubSpotMs(iso) {
+  return new Date(iso + 'T12:00:00Z').getTime();
+}
+
+/* ── Form submit ── */
+async function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn  = form.querySelector('.btn-submit');
+  btn.disabled = true;
+  btn.textContent = 'Saving…';
+
+  const data = {
+    first_name: form.first_name.value.trim(),
+    last_name:  form.last_name.value.trim(),
+    email:      form.email.value.trim(),
+    phone:      form.phone.value.trim(),
+    state:      form.state.value,
+  };
+
+  try {
+    await submitToHubSpot(data);
+    localStorage.setItem('unbound_confirmed_sessions', JSON.stringify(selectedDates));
+    window.location.href = 'confirmed.html';
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = 'Save My Spot →';
+    alert('Something went wrong — please try again or email hello@unbound.school.');
+  }
+}
+
+async function submitToHubSpot(formData) {
+  const fd = new FormData();
+  fd.append('firstname',                     formData.first_name);
+  fd.append('lastname',                      formData.last_name);
+  fd.append('email',                         formData.email);
+  fd.append('phone',                         formData.phone);
+  fd.append('grade_eligibility',             'eligible');
+  fd.append('hs_state_code',                 formData.state);
+  fd.append('summer_sessions_interested_in', getSessionsValue());
+  fd.append('lead_source_detail',            'summer-sessions-unbound-2026');
+
+  Object.keys(selectedDates).forEach(sess => {
+    const date = selectedDates[sess].date;
+    const iso  = SESSION_DATE_ISO[sess]?.[date];
+    const disp = SESSION_DATE_DISPLAY[sess]?.[date];
+    if (iso)  fd.append(sess + '_session_date',         String(isoToHubSpotMs(iso)));
+    if (disp) fd.append(sess + '_session_date_display', disp);
+  });
+
+  ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(k => {
+    const v = localStorage.getItem('ub_' + k);
+    if (v) fd.append(k, v);
+  });
+
+  const hutk = (document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]*)/) || [])[1];
+  const ctx = { pageUri: location.href, pageName: document.title };
+  if (hutk) ctx.hutk = hutk;
+  fd.append('hs_context', JSON.stringify(ctx));
+
+  const res = await fetch(
+    `https://forms.hubspot.com/uploads/form/v2/${HS_PORTAL}/${HS_FORM}`,
+    { method: 'POST', body: fd }
+  );
+  if (!res.ok) {
+    const body = await res.text().catch(() => '');
+    throw new Error(`HubSpot ${res.status}: ${body}`);
+  }
+}
+
+/* ── FAQ toggle ── */
+function toggleFaq(el) {
+  const item = el.closest('.faq-item');
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+</script>
+
+</body>
+</html>
