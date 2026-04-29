@@ -356,7 +356,7 @@
         <h3>Meet Other Virtual Schoolers</h3>
         <p class="sc-time">Wednesdays · 12:00 PM MST · 1 hour</p>
         <p>Games, team challenges, and a group of virtual and homeschooled students who actually get what it's like to learn outside a traditional classroom. A different theme every week.</p>
-        <div class="sc-date-label">Pick a date in June:</div>
+        <div class="sc-date-label">Pick your dates in June (select all that apply):</div>
         <div class="sc-pills">
           <button class="sc-pill" data-session="social" data-date="June 3"  data-label="Wed, Jun 3 · 12pm MST"  onclick="pickDate(this)">Wed, Jun 3</button>
           <button class="sc-pill" data-session="social" data-date="June 10" data-label="Wed, Jun 10 · 12pm MST" onclick="pickDate(this)">Wed, Jun 10</button>
@@ -758,14 +758,34 @@ let selectedDates = {};
 function pickDate(btn) {
   const sess = btn.dataset.session;
   const date = btn.dataset.date;
-  // Deselect siblings
-  btn.closest('.sc-pills').querySelectorAll('.sc-pill').forEach(p => p.classList.remove('selected'));
-  btn.classList.add('selected');
-  selectedDates[sess] = { date, label: btn.dataset.label };
-  const card = btn.closest('.session-card');
-  card.classList.add('has-date');
-  const confirm = document.getElementById('sc-confirm-' + sess);
-  if (confirm) { confirm.textContent = '✓ Date selected — register below ↓'; }
+
+  if (sess === 'social') {
+    // Multi-select toggle
+    btn.classList.toggle('selected');
+    const selected = Array.from(btn.closest('.sc-pills').querySelectorAll('.sc-pill.selected'));
+    if (selected.length) {
+      selectedDates.social = selected.map(b => ({ date: b.dataset.date, label: b.dataset.label }));
+    } else {
+      delete selectedDates.social;
+    }
+    const card = btn.closest('.session-card');
+    card.classList.toggle('has-date', selected.length > 0);
+    const confirm = document.getElementById('sc-confirm-social');
+    if (confirm) {
+      confirm.textContent = selected.length
+        ? `✓ ${selected.length} date${selected.length > 1 ? 's' : ''} selected — register below ↓`
+        : '';
+    }
+  } else {
+    // Single-select for story and game
+    btn.closest('.sc-pills').querySelectorAll('.sc-pill').forEach(p => p.classList.remove('selected'));
+    btn.classList.add('selected');
+    selectedDates[sess] = { date, label: btn.dataset.label };
+    const card = btn.closest('.session-card');
+    card.classList.add('has-date');
+    const confirm = document.getElementById('sc-confirm-' + sess);
+    if (confirm) { confirm.textContent = '✓ Date selected — register below ↓'; }
+  }
   updateSummary();
 }
 
@@ -778,12 +798,27 @@ function updateSummary() {
     if (nudge) nudge.style.display = 'none';
     return;
   }
-  list.innerHTML = keys.map(k => `<div class="ss-item">${SESSION_NAMES[k]} — ${selectedDates[k].label}</div>`).join('');
+  const rows = [];
+  keys.forEach(k => {
+    const val = selectedDates[k];
+    const entries = Array.isArray(val) ? val : [val];
+    entries.forEach(e => rows.push(`<div class="ss-item">${SESSION_NAMES[k]} — ${e.label}</div>`));
+  });
+  list.innerHTML = rows.join('');
   if (nudge) nudge.style.display = keys.length < 3 ? 'block' : 'none';
 }
 
 function getSessionsValue() {
-  return Object.keys(selectedDates).map(k => SESSION_NAMES[k] + ' – ' + selectedDates[k].date).join('; ');
+  const parts = [];
+  Object.keys(selectedDates).forEach(k => {
+    const val = selectedDates[k];
+    if (Array.isArray(val)) {
+      val.forEach(e => parts.push(SESSION_NAMES[k] + ' – ' + e.date));
+    } else {
+      parts.push(SESSION_NAMES[k] + ' – ' + val.date);
+    }
+  });
+  return parts.join('; ');
 }
 
 function isoToHubSpotMs(iso) {
@@ -817,6 +852,13 @@ async function handleSubmit(e) {
   }
 }
 
+const SOCIAL_DATE_BOOL = {
+  'June 3':  'social_june_3',
+  'June 10': 'social_june_10',
+  'June 17': 'social_june_17',
+  'June 24': 'social_june_24',
+};
+
 async function submitToHubSpot(formData) {
   const fd = new FormData();
   fd.append('firstname',                     formData.first_name);
@@ -829,11 +871,28 @@ async function submitToHubSpot(formData) {
   fd.append('lead_source_detail',            'summer-sessions-unbound-2026');
 
   Object.keys(selectedDates).forEach(sess => {
-    const date = selectedDates[sess].date;
-    const iso  = SESSION_DATE_ISO[sess]?.[date];
-    const disp = SESSION_DATE_DISPLAY[sess]?.[date];
-    if (iso)  fd.append(sess + '_session_date',         String(isoToHubSpotMs(iso)));
-    if (disp) fd.append(sess + '_session_date_display', disp);
+    if (sess === 'social') {
+      const dates = selectedDates.social; // array
+      const displayParts = [];
+      dates.forEach(entry => {
+        const boolProp = SOCIAL_DATE_BOOL[entry.date];
+        if (boolProp) fd.append(boolProp, 'true');
+        displayParts.push(entry.date);
+      });
+      fd.append('social_session_dates_display', displayParts.join(', '));
+      // Back-compat: also store first date as single date fields
+      const first = dates[0];
+      const iso  = SESSION_DATE_ISO.social?.[first.date];
+      const disp = SESSION_DATE_DISPLAY.social?.[first.date];
+      if (iso)  fd.append('social_session_date',         String(isoToHubSpotMs(iso)));
+      if (disp) fd.append('social_session_date_display', disp);
+    } else {
+      const date = selectedDates[sess].date;
+      const iso  = SESSION_DATE_ISO[sess]?.[date];
+      const disp = SESSION_DATE_DISPLAY[sess]?.[date];
+      if (iso)  fd.append(sess + '_session_date',         String(isoToHubSpotMs(iso)));
+      if (disp) fd.append(sess + '_session_date_display', disp);
+    }
   });
 
   ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(k => {

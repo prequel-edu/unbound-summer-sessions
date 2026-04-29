@@ -627,17 +627,18 @@ function renderSessions() {
     return;
   }
 
-  container.innerHTML = keys.map(sess => {
+  const rows = [];
+  keys.forEach(sess => {
     const meta = SESSION_META[sess];
-    if (!meta) return '';
-    const entry = stored[sess];
-    const date  = entry.date;
-    const label = entry.label;
-
-    const gcLink  = googleCalLink(meta, date);
-    const icsHref = makeIcsBlob(meta, date);
-
-    return `
+    if (!meta) return;
+    const val = stored[sess];
+    const entries = Array.isArray(val) ? val : [val];
+    entries.forEach(entry => {
+      const date  = entry.date;
+      const label = entry.label;
+      const gcLink  = googleCalLink(meta, date);
+      const icsHref = makeIcsBlob(meta, date);
+      rows.push(`
       <div class="session-item">
         <span class="si-icon">${meta.icon}</span>
         <div class="si-info">
@@ -654,8 +655,10 @@ function renderSessions() {
             Apple / Outlook
           </a>` : ''}
         </div>
-      </div>`;
-  }).join('');
+      </div>`);
+    });
+  });
+  container.innerHTML = rows.join('');
 }
 
 // ── FAQ toggle ────────────────────────────────────────────────
