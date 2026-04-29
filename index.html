@@ -93,6 +93,7 @@
     .sc-type { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 3px 10px; border-radius: 4px; margin-bottom: 10px; }
     .sc-type.workshop { background: #EDE9FE; color: #5B21B6; }
     .sc-type.social { background: #D1FAE5; color: #065F46; }
+    .sc-join-mode { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 3px 10px; border-radius: 4px; margin-bottom: 10px; margin-left: 6px; background: var(--off2); color: var(--ink2); }
     .session-card h3 { font-family: 'Coolvetica Condensed', sans-serif; font-size: 26px; letter-spacing: .03em; color: var(--ink); margin-bottom: 4px; }
     .sc-time { font-size: 12px; font-weight: 700; color: var(--ink3); margin-bottom: 10px; letter-spacing: .02em; }
     .session-card p { font-size: 14px; color: var(--ink3); line-height: 1.65; margin-bottom: 18px; }
@@ -318,10 +319,11 @@
       <div class="session-card" data-session="story">
         <span class="sc-icon">📖</span>
         <span class="sc-type workshop">Workshop</span>
+        <span class="sc-join-mode">Join for 1</span>
         <h3>Create Your Own Story</h3>
         <p class="sc-time">Tuesdays · 3:00 PM MST · 1 hour</p>
         <p>Use AI to bring a story to life — characters, plot, illustrations. Students build a complete 10-page storybook and leave with a finished book to share.</p>
-        <div class="sc-date-label">Pick a date in June:</div>
+        <div class="sc-date-label">Pick 1 date in June:</div>
         <div class="sc-pills">
           <button class="sc-pill" data-session="story" data-date="June 2"  data-label="Tue, Jun 2 · 3pm MST"  onclick="pickDate(this)">Tue, Jun 2</button>
           <button class="sc-pill" data-session="story" data-date="June 9"  data-label="Tue, Jun 9 · 3pm MST"  onclick="pickDate(this)">Tue, Jun 9</button>
@@ -336,10 +338,11 @@
       <div class="session-card" data-session="game">
         <span class="sc-icon">🎮</span>
         <span class="sc-type workshop">Workshop</span>
+        <span class="sc-join-mode">Join for 1</span>
         <h3>Build Your Own Video Game</h3>
         <p class="sc-time">Thursdays · 9:00 AM MST · 1 hour</p>
         <p>No experience needed. Learn Scratch and build a real, playable game from scratch. Customize every detail and leave with something you'll want to share.</p>
-        <div class="sc-date-label">Pick a date in June:</div>
+        <div class="sc-date-label">Pick 1 date in June:</div>
         <div class="sc-pills">
           <button class="sc-pill" data-session="game" data-date="June 4"  data-label="Thu, Jun 4 · 9am MST"  onclick="pickDate(this)">Thu, Jun 4</button>
           <button class="sc-pill" data-session="game" data-date="June 11" data-label="Thu, Jun 11 · 9am MST" onclick="pickDate(this)">Thu, Jun 11</button>
@@ -353,6 +356,7 @@
       <div class="session-card" data-session="social">
         <span class="sc-icon">🤝</span>
         <span class="sc-type social">Social</span>
+        <span class="sc-join-mode">Join for all</span>
         <h3>Meet Other Virtual Schoolers</h3>
         <p class="sc-time">Wednesdays · 12:00 PM MST · 1 hour</p>
         <p>Games, team challenges, and a group of virtual and homeschooled students who actually get what it's like to learn outside a traditional classroom. A different theme every week.</p>
