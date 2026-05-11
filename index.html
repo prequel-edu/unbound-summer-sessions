@@ -867,6 +867,8 @@ async function submitToHubSpot(formData) {
   const fd = new FormData();
   fd.append('firstname',                     formData.first_name);
   fd.append('lastname',                      formData.last_name);
+  fd.append('student_first_name',            formData.child_firstname);
+  fd.append('student_grade',                 formData.grade);
   fd.append('email',                         formData.email);
   fd.append('phone',                         formData.phone);
   fd.append('grade_eligibility',             'eligible');
